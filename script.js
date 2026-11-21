@@ -1,1 +1,64 @@
-const menuButton=document.querySelector('.menu-toggle');const nav=document.querySelector('.nav');menuButton?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close navigation':'Open navigation')});document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuButton?.setAttribute('aria-expanded','false')}));const progress=document.querySelector('.progress');const update=()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=`${max>0?scrollY/max*100:0}%`};addEventListener('scroll',update,{passive:true});update();const targets=document.querySelectorAll('.section-kicker,.intro-grid,.section-heading,.project-card,.interlude p,.journey-grid,.toolkit,.contact-inner');targets.forEach(el=>el.classList.add('reveal'));if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});targets.forEach(el=>observer.observe(el))}else targets.forEach(el=>el.classList.add('visible'));
+const menuButton = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.nav');
+
+menuButton?.addEventListener('click', () => {
+  const isOpen = nav.classList.toggle('open');
+
+  menuButton.setAttribute('aria-expanded', String(isOpen));
+  menuButton.setAttribute(
+    'aria-label',
+    isOpen ? 'Close navigation' : 'Open navigation'
+  );
+});
+
+document.querySelectorAll('.nav a').forEach((link) => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('open');
+    menuButton?.setAttribute('aria-expanded', 'false');
+  });
+});
+
+const progressBar = document.querySelector('.progress');
+
+function updateScrollProgress() {
+  const maxScroll =
+    document.documentElement.scrollHeight - window.innerHeight;
+
+  const progress = maxScroll > 0
+    ? (window.scrollY / maxScroll) * 100
+    : 0;
+
+  progressBar.style.width = `${progress}%`;
+}
+
+window.addEventListener('scroll', updateScrollProgress, { passive: true });
+updateScrollProgress();
+
+const revealTargets = document.querySelectorAll(
+  '.section-kicker, .intro-grid, .section-heading, .project-card, ' +
+  '.interlude p, .journey-grid, .toolkit, .contact-inner'
+);
+
+revealTargets.forEach((element) => {
+  element.classList.add('reveal');
+});
+
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  revealTargets.forEach((element) => observer.observe(element));
+} else {
+  revealTargets.forEach((element) => {
+    element.classList.add('visible');
+  });
+}
