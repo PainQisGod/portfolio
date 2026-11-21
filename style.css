@@ -873,3 +873,111 @@ footer a {
     transform:none
   }
 }
+
+
+/* Falling autumn leaves */
+.falling-leaves {
+  position: fixed;
+  inset: 0;
+  z-index: 8;
+  overflow: hidden;
+  pointer-events: none;
+}
+.falling-leaf {
+  position: absolute;
+  top: -12vh;
+  left: var(--leaf-x);
+  color: var(--leaf-color);
+  font-size: var(--leaf-size);
+  line-height: 1;
+  opacity: var(--leaf-opacity);
+  filter: blur(var(--leaf-blur));
+  animation: leaf-fall var(--leaf-duration) linear var(--leaf-delay) infinite;
+  will-change: transform;
+}
+@keyframes leaf-fall {
+  0% {
+    transform: translate3d(0, -5vh, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(var(--leaf-drift), 25vh, 0) rotate(180deg);
+  }
+  50% {
+    transform: translate3d(calc(var(--leaf-drift) * -0.55), 55vh, 0) rotate(360deg);
+  }
+  75% {
+    transform: translate3d(var(--leaf-drift), 85vh, 0) rotate(540deg);
+  }
+  100% {
+    transform: translate3d(0, 115vh, 0) rotate(720deg);
+  }
+}
+.esports {
+  background: #190d12;
+}
+.esports-intro {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 26px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.esports-name {
+  margin: 0;
+  font: 500 clamp(28px, 4vw, 44px) var(--serif);
+}
+.esports-role {
+  font: 9px var(--mono);
+  letter-spacing: .12em;
+  color: var(--orange);
+}
+.achievement-list {
+  border-bottom: 1px solid var(--line);
+}
+.achievement-list article {
+  display: grid;
+  grid-template-columns: 90px 1fr 40px;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+.achievement-list article:last-child {
+  border-bottom: 0;
+}
+.achievement-list time,
+.achievement-mark {
+  font: 10px var(--mono);
+  color: var(--orange);
+}
+.achievement-list h3 {
+  margin: 0 0 6px;
+  font: 500 21px var(--serif);
+}
+.achievement-list p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+.achievement-mark {
+  text-align: right;
+  opacity: .7;
+}
+@media(max-width: 800px) {
+  .esports-intro {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .achievement-list article {
+    grid-template-columns: 55px 1fr 24px;
+    gap: 12px;
+  }
+}
+@media(prefers-reduced-motion: reduce) {
+  .falling-leaves {
+    display: none;
+  }
+}
