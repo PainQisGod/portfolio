@@ -1353,3 +1353,164 @@ footer a {
     gap: 28px;
   }
 }
+
+
+/* Anime, football, and club favorites */
+.favorite-subsection {
+  margin-top: 58px;
+}
+.favorite-subheading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+.favorite-subheading > span {
+  color: var(--orange);
+  font: 9px var(--mono);
+  letter-spacing: .16em;
+}
+.favorite-subheading h3 {
+  margin: 0;
+  font: 500 clamp(24px, 3vw, 34px) var(--serif);
+}
+.favorite-subheading h3 em {
+  color: #d68b6b;
+}
+.anime-favorites {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.anime-favorites article {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 92px;
+  padding: 18px;
+  border-right: 1px solid var(--line);
+}
+.anime-favorites article:last-child {
+  border-right: 0;
+}
+.anime-favorites article > span {
+  color: var(--orange);
+  font: 9px var(--mono);
+}
+.anime-favorites h4, .footballer-caption h4, .club-card h4 {
+  margin: 0;
+  font: 500 20px var(--serif);
+}
+.footballer-grid, .club-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.footballer-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #190d12;
+}
+.footballer-card > img {
+  display: block;
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+  object-position: center 25%;
+  filter: saturate(.82);
+}
+.footballer-caption {
+  padding: 20px 22px 22px;
+}
+.footballer-caption p, .club-card p {
+  margin: 7px 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.footballer-caption a, .club-card small {
+  color: #e6b18d;
+  font: 9px var(--mono);
+  letter-spacing: .04em;
+}
+.club-card {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--line);
+  background: #190d12;
+  transition: border-color .2s, transform .2s;
+}
+.club-card:hover {
+  border-color: #9d594e;
+  transform: translateY(-3px);
+}
+.club-logo-wrap {
+  display: grid;
+  place-items: center;
+  flex: 0 0 112px;
+  width: 112px;
+  height: 112px;
+  overflow: hidden;
+  background: #f7f4ef;
+  border-radius: 50%;
+}
+.club-logo-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+}
+.club-logo-wrap .barca-logo {
+  width: 250%;
+  height: 250%;
+  max-width: none;
+  object-fit: cover;
+  object-position: 91% 50%;
+  padding: 0;
+}
+.club-note {
+  margin: 16px 0 0;
+  color: #8f7974;
+  font-size: 10px;
+  line-height: 1.7;
+}
+@media(max-width:800px) {
+  .anime-favorites {
+    grid-template-columns: 1fr;
+  }
+  .anime-favorites article {
+    min-height: 72px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .anime-favorites article:last-child {
+    border-bottom: 0;
+  }
+  .footballer-grid, .club-grid {
+    grid-template-columns: 1fr;
+  }
+  .footballer-card > img {
+    height: 280px;
+  }
+  .favorite-subheading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .club-card {
+    padding: 16px;
+    gap: 16px;
+  }
+  .club-logo-wrap {
+    flex-basis: 88px;
+    width: 88px;
+    height: 88px;
+  }
+}
