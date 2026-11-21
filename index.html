@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js">
     </script>
@@ -26,7 +28,7 @@
         <span></span><span></span>
       </button>
       <nav class="nav">
-        <a href="#about">About</a><a href="#work">Selected work</a><a href="#esports">Esports</a><a href="#journey">Journey</a><a class="nav-contact" href="#contact">Say hello <span>↗</span></a>
+        <a href="#about">About</a><a href="#work">Selected work</a><a href="#esports">Esports</a><a href="#favorites">Favorites</a><a href="#journey">Journey</a><a class="nav-contact" href="#contact">Say hello <span>↗</span></a>
       </nav>
     </header>
     <main>
@@ -123,10 +125,37 @@
               <div class="tags">
                 <span>JavaScript</span><span>Web app</span><span>MLBB</span>
               </div>
-              <a class="project-link" href="https://github.com/PainQisGod">Explore project <span>↗</span></a>
+              <a class="project-link" href="https://github.com/PainQisGod/jongrai" target="_blank" rel="noreferrer">Explore project <span>↗</span></a>
             </div>
           </article>
 
+
+          <article class="project-card">
+            <div class="project-visual visual-bayonette">
+              <label>PROJECT / 002</label>
+              <div class="project-art-title">BAYONETTE<span>ONLINE SHOP · FLASK</span></div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">02 — E-COMMERCE / WEB APP <span>PERSONAL PROJECT</span></div>
+              <h3>Bayonette</h3>
+              <p>A Flask-powered shop with product browsing, accounts, cart and checkout, order history, reviews, wishlists, and an admin dashboard.</p>
+              <div class="tags"><span>Python</span><span>Flask</span><span>SQLite</span></div>
+              <a class="project-link" href="https://github.com/PainQisGod/bayonette" target="_blank" rel="noreferrer">Explore project <span>↗</span></a>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-visual visual-paygone">
+              <label>PROJECT / 003</label>
+              <div class="project-art-title">PAYGONE<span>WORLD CUP 2026</span></div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">03 — EXPERIMENT / WORLD CUP <span>PERSONAL PROJECT</span></div>
+              <h3>PayGone World Cup</h3>
+              <p>A small experimental project made around the 2026 FIFA World Cup.</p>
+              <div class="tags"><span>World Cup 2026</span><span>Experiment</span></div>
+              <a class="project-link" href="https://github.com/PainQisGod/paygone-worldcup" target="_blank" rel="noreferrer">Explore project <span>↗</span></a>
+            </div>
+          </article>
         </div>
       </section>
       <section class="esports section-pad" id="esports">
@@ -184,9 +213,23 @@
         </p>
         <small>— A WORK IN PROGRESS, BY DESIGN.</small>
       </section>
+      <section class="favorites section-pad" id="favorites">
+        <div class="section-kicker">
+          <span>04</span> OFF THE CLOCK
+        </div>
+        <div class="section-heading">
+          <h2>Worlds I <em>return to.</em></h2>
+          <p>Some of my favorite games to get lost in.</p>
+        </div>
+        <div class="favorite-games">
+          <article><span class="favorite-index">01</span><div><h3>Minecraft</h3><p>Build, explore, and make your own world.</p></div><span class="favorite-arrow">↗</span></article>
+          <article><span class="favorite-index">02</span><div><h3>Cyberpunk 2077</h3><p>A neon-lit world full of stories and choices.</p></div><span class="favorite-arrow">↗</span></article>
+          <article><span class="favorite-index">03</span><div><h3>The Witcher 3</h3><p>A rich fantasy world worth getting lost in.</p></div><span class="favorite-arrow">↗</span></article>
+        </div>
+      </section>
       <section class="journey section-pad" id="journey">
         <div class="section-kicker">
-          <span>04</span> STILL BECOMING
+          <span>05</span> STILL BECOMING
         </div>
         <div class="journey-grid">
           <div>
@@ -243,7 +286,7 @@
       </section>
       <section class="contact section-pad" id="contact">
         <div class="section-kicker">
-          <span>05</span> THE STORY CONTINUES
+          <span>06</span> THE STORY CONTINUES
         </div>
         <div class="contact-inner">
           <p class="eyebrow">
@@ -254,9 +297,11 @@
             something <em>matter.</em>
           </h2>
           <a class="contact-email" href="mailto:painqbros@gmail.com">painqbros@gmail.com <span>↗</span></a>
-          <p class="contact-note">
-            Replace this with your preferred email address.
-          </p>
+          <div class="social-links" aria-label="Social media">
+            <a href="https://www.facebook.com/painqisgod" target="_blank" rel="noreferrer" aria-label="Facebook"><ion-icon name="logo-facebook"></ion-icon><span>Facebook</span></a>
+            <a href="https://www.instagram.com/painqisgod" target="_blank" rel="noreferrer" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon><span>Instagram</span></a>
+            <a href="https://www.youtube.com/@painqisgod" target="_blank" rel="noreferrer" aria-label="YouTube"><ion-icon name="logo-youtube"></ion-icon><span>YouTube</span></a>
+          </div>
         </div>
         <footer>
           <span>THIRAK / PAINQ</span><span>MADE WITH CURIOSITY & A LITTLE AUTUMN.</span><a href="#home">BACK TO TOP ↑</a>
