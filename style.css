@@ -981,3 +981,33 @@ footer a {
     display: none;
   }
 }
+
+
+/* Hirara splash art in the hero */
+.hero-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hirara-splash {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 24px 55px #0009);
+  -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+}
+@media(max-width:800px) {
+  .hero-art {
+    width: 100vw;
+    height: 420px;
+    right: -28vw;
+    top: 390px;
+    opacity: .62;
+  }
+  .hirara-splash {
+    object-position: center;
+  }
+}
